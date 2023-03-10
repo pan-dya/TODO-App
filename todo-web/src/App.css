@@ -1,38 +1,148 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'monospace', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.TodoApp {
+  text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: start;
+  width: 512px;
+  min-height: 500px;
+  margin: 128px auto;
+  background: #99ffe6;
+  border-radius: 10px;
+  padding-bottom: 20px;
+}
+
+h1 {
+  margin: 32px;
+  color: darkslategray;
+  font-size: 24px;
+}
+
+.todoForm {
+  margin-bottom: 32px;
+}
+
+.todoInput {
+  padding: 14px 32px 14px 16px;
+  border-radius: 4px 0 0 4px;
+  border: 2px solid #5d0cff;
+  outline: none;
+  width: 320px;
+  background: solid;
+  color: #2acaea;
+}
+
+.todoInput::placeholder {
+  color: black;
+}
+
+.todoButton {
+  padding: 16px 40px;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  outline: none;
   color: white;
+  background: linear-gradient(
+    90deg,
+    rgba(20, 159, 255, 1) 0%,
+    rgba(17, 122, 255, 1) 100%
+  );
 }
 
-.App-link {
-  color: #61dafb;
+.todoInput.edit{
+  border: 2px solid none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.todoButton.edit{
+  padding: 16px 49px;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  outline: none;
+  color: white;
+  background: linear-gradient(
+    90deg,
+    rgba(20, 159, 255, 1) 0%,
+    rgba(17, 122, 255, 1) 100%
+  );
+}
+
+.todoRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4px auto;
+  color: #fff;
+  background: linear-gradient(
+    90deg,
+    rgba(20, 159, 255, 1) 0%,
+    rgba(17, 122, 255, 1) 100%
+  );
+  padding: 16px;
+  border-radius: 5px;
+  width: 90%;
+}
+
+.todoRow.complete {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4px auto;
+  color: #fff;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 118, 20, 1) 0%,
+    rgba(255, 84, 17, 1) 100%
+  );
+  padding: 16px;
+  border-radius: 5px;
+  width: 90%;
+}
+
+.buttonContainer {
+  background-color: none;
+  border: 1px solid none;
+  border-radius: 10px;
+  padding: 4px;
+  place-items: center;
+}
+
+#completeButton {
+  background-color: rgb(204, 70, 104);
+}
+
+
+#removeButton {
+  background-color: rgb(39,166,75);
+}
+
+#editButton {
+  background-color: rgb(242,185,42);
+}
+
+.buttons { 
+  padding: 10px 17px 10px 17px;
+  margin-right: 3px;
+  color: white;
+  border-radius: 4px;
+  border: black;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  font-size: 14px;
+}
+
+.buttons:hover {
+  opacity: 0.5;
 }
